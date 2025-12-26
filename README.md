@@ -141,9 +141,16 @@ plt.show()
 
 ---
 
+#### **Grafico**
+<p>
+   <img src="https://github.com/heryon/Project_Probability_Horizons/blob/c62dc68dca2ff1664296504942f766d0896395db/grafico_varia%C3%A7%C3%A3o_probabilidades.png"/>
+</p>
+
+---
+
 #### **Simulações e Análise**
 
-A simulação computacional exibida no código acima mostra como a probabilidade de um evento evolui ao longo do tempo. O gráfico representa a transição das incertezas (no início, muitas possibilidades) até a convergência da probabilidade para 1 (certeza) ou 0 (impossibilidade), destacando o ponto do Horizonte de Probabilidades $H(t)$.
+A simulação computacional exibida no grafico acima mostra como a probabilidade de um evento evolui ao longo do tempo. O gráfico representa a transição das incertezas (no início, muitas possibilidades distribuidas igualmente) até a convergência da probabilidade para 1 (certeza) ou 0 (impossibilidade), destacando o comportamento da distribuição da probabilidade ao longo do tempo no sistema fechado, ponto do Horizonte de Probabilidades $H(t)$.
 
 ---
 
