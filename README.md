@@ -169,7 +169,9 @@ O **Horizonte de Probabilidades** é um conceito teórico que descreve como as p
 
 #### **Conceito Fundamental**
 
-O **Horizonte de Probabilidades** pode ser definido como o ponto no tempo em que a incerteza de um evento desaparece, fazendo com que o evento se torne inevitável ou impossível. O comportamento da probabilidade de um evento ao longo do tempo pode ser descrito pela fórmula:
+O Horizonte de Probabilidades é definido como o limite temporal a partir do qual a incerteza associada a um evento deixa de evoluir de forma significativa, conduzindo o sistema a um estado de inevitabilidade (probabilidade tendendo a 1) ou de impossibilidade (probabilidade tendendo a 0). Esse conceito descreve a transição dinâmica entre regimes de alta incerteza e regimes determinísticos, sendo aplicável a sistemas estocásticos, processos informacionais e modelos de decisão.
+
+A evolução temporal da probabilidade de ocorrência de um evento pode ser modelada, em primeira aproximação, por uma função de relaxação exponencial:
 
 $$
 P(t) = 1 - e^{-k(t - t_0)}
@@ -177,21 +179,23 @@ $$
 
 
 Onde:
-- **$P(t)$** : probabilidade do evento ocorrer em um momento  $t$ ;
-- **$k$** : constante que determina a taxa de convergência da probabilidade;
-- **$t_0$** : o tempo inicial, onde a incerteza é máxima.
+- **$P(t)$** : probabilidade do evento ocorrer em um instante  $t$ ;
+- **$k>0$** : é uma constante de taxa que controla a velocidade de convergência da probabilidade;
+- **$t_0$** : corresponde ao instante inicial do processo, no qual a incerteza do sistema é máxima.
 
 ---
 
-#### **Fórmula do Horizonte de Probabilidades $H(t)$**
+#### **Horizonte de Probabilidades $H(t)$**
 
-Para calcular o tempo  $H(t)$ em que uma determinada probabilidade $P(t)$ é alcançada, utilizamos a fórmula inversa:
+O horizonte de probabilidades $H(t)$ é definido como o instante temporal no qual a probabilidade $P(t)$ atinge um valor crítico previamente estabelecido $P_c​ ∈(0,1)$. A inversão da equação de evolução permite calcular explicitamente esse horizonte temporal:
 
 $$
-H(t) = \frac{1}{k} \ln\left(\frac{1}{1 - P(t)}\right) + t_0
+H(t) =  t_0 + \frac{1}{k} \ln\left(\frac{1}{1 - P(t)}\right) 
 $$
 
-Essa fórmula permite prever **quando** a probabilidade de um evento atingirá um valor específico, determinando o ponto no tempo em que o evento se tornará certo ou impossível.
+Essa expressão possibilita determinar quando um evento alcançará um determinado nível de certeza, caracterizando o ponto em que o sistema transita de um regime probabilístico para um regime efetivamente determinístico.
+
+Do ponto de vista interpretativo, o Horizonte de Probabilidades não representa um instante absoluto, mas um limiar dinâmico, dependente da taxa de convergência $$𝑘$$ e do nível de confiança adotado. Assim, diferentes sistemas ou contextos podem apresentar horizontes distintos, mesmo sob a mesma formulação matemática..
 
 ---
 
