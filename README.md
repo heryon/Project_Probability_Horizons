@@ -30,6 +30,20 @@ Por outro lado, a teoria de transições de fase em sistemas físicos fornece um
 
 ---
 
+## **Objetivos do Projeto**
+
+O objetivo deste trabalho é estabelecer o conceito de Horizonte de Probabilidades como uma estrutura teórica formal para descrever a evolução temporal da incerteza em sistemas estocásticos, complexos e não lineares. Busca-se caracterizar matematicamente o processo pelo qual múltiplas possibilidades coexistem sob alta incerteza e, à medida que informações são acumuladas ou interações ocorrem, o sistema transita para um regime no qual uma possibilidade dominante emerge, conduzindo à inevitabilidade ou à impossibilidade de um evento.
+
+Este estudo visa desenvolver uma formulação matemática consistente que permita descrever a dinâmica de convergência probabilística, identificando os parâmetros que controlam a taxa de redução da incerteza e o instante crítico no qual ocorre a transição entre regimes probabilísticos e determinísticos. Ao fazê-lo, pretende-se fornecer uma interpretação unificada que conecte processos de relaxação probabilística, teoria da informação e dinâmica temporal de sistemas estocásticos.
+
+Outro objetivo central é investigar a relação entre o Horizonte de Probabilidades e medidas informacionais, em particular a entropia, analisando como a diminuição entrópica acompanha o colapso progressivo do espaço de possibilidades. Essa abordagem permite interpretar o horizonte não apenas como um instante temporal, mas como um limiar informacional, no qual o sistema perde graus de liberdade relevantes e passa a exibir comportamento efetivamente determinístico.
+
+Adicionalmente, o trabalho busca situar o Horizonte de Probabilidades no contexto mais amplo da física estatística, dos sistemas complexos e da inteligência artificial, explorando analogias com transições de fase, parâmetros de ordem e processos de tomada de decisão sob incerteza. Ao integrar esses domínios, pretende-se demonstrar que o conceito possui caráter geral e pode ser aplicado a uma ampla classe de sistemas dinâmicos, independentemente de sua natureza específica.
+
+Por fim, o estudo tem como objetivo oferecer uma base conceitual sólida que permita futuras extensões do modelo, incluindo formulações mais gerais, análises em tempo discreto, abordagens bayesianas e aplicações em sistemas computacionais adaptativos. Assim, o Horizonte de Probabilidades é apresentado não como um modelo fechado, mas como um arcabouço teórico aberto, destinado a apoiar investigações posteriores sobre a dinâmica da incerteza e da decisão em sistemas complexos.
+
+---
+
 ## Fundamentação Teórica
 
 ### Entropia da Informação
@@ -82,143 +96,77 @@ Esse comportamento universal próximo ao ponto crítico inspira a analogia com s
 
 ## Formulação Matemática
 
-Considere uma distribuição de probabilidade $$P = \{p_i\}$$. A entropia informacional é:
+### **Conceito Fundamental**
+
+O Horizonte de Probabilidades é definido como o limite a partir do qual a incerteza associada a um evento deixa de evoluir de forma relevante, conduzindo o sistema a um estado de inevitabilidade, quando a probabilidade tende a 1, ou de impossibilidade, quando tende a 0. Esse conceito descreve a transição dinâmica entre regimes dominados pela incerteza e regimes nos quais o comportamento do sistema se torna efetivamente determinístico. Tal estrutura é aplicável a sistemas estocásticos, processos informacionais e modelos de decisão sob incerteza.
+
+Em primeira aproximação, assume-se que a taxa de variação da probabilidade de um evento seja proporcional à incerteza ainda presente no sistema. Essa hipótese conduz naturalmente a uma equação diferencial de relaxação, cuja solução assume a forma exponencial. Assim, a evolução temporal da probabilidade de ocorrência de um evento pode ser modelada por:
+
+$$
+P(t) = 1 - e^{-k(t - t_0)}
+$$
+
+onde $P(t)$ representa a probabilidade do evento em um instante $t$, $k > 0$ é uma constante de taxa que controla a velocidade de convergência do processo e $t_0$ corresponde ao instante inicial, no qual a incerteza do sistema é máxima. Essa expressão descreve um comportamento típico de processos de saturação informacional, nos quais a probabilidade cresce rapidamente nos estágios iniciais e desacelera à medida que o sistema se aproxima de um regime determinístico.
+
+Embora o tempo organize a dinâmica do processo, o mecanismo fundamental subjacente à convergência probabilística é o acúmulo de informação. Para formalizar esse aspecto, considera-se uma distribuição de probabilidade $P = \{p_i\}$ associada aos estados possíveis do sistema, cuja incerteza global é quantificada pela entropia de Shannon:
 
 $$
 H(P) = -\sum_i p_i \ln p_i
 $$
 
-Sob novas evidências, a distribuição evolui segundo Bayes. Definimos uma energia informacional $$E_i$$ associada a cada estado, de modo que:
+À medida que novas evidências são incorporadas, a distribuição evolui segundo a regra de Bayes, resultando em uma concentração progressiva da probabilidade. Associando a cada estado uma energia informacional $E_i$, a verossimilhança pode ser expressa na forma exponencial:
 
 $$
 P(D|i) \propto e^{-E_i}
 $$
 
-Introduzindo um parâmetro $$\beta$$ que quantifica a intensidade da evidência acumulada, a distribuição posterior assume a forma de Gibbs informacional:
+Introduzindo um parâmetro $\beta$, que quantifica a intensidade acumulada da evidência disponível ao sistema, a distribuição posterior assume a forma de uma distribuição de Gibbs informacional:
 
 $$
 P_i(\beta) = \frac{e^{-\beta E_i}}{Z(\beta)}
 $$
 
-onde $$Z(\beta)$$ é a função de partição.
+onde $Z(\beta)$ é a função de partição responsável pela normalização. À medida que $\beta$ aumenta, a distribuição torna-se progressivamente mais concentrada, refletindo a redução dos graus de liberdade relevantes do sistema e a consequente diminuição da entropia informacional.
 
-A entropia $$H(\beta)$$ decresce monotonicamente com $$\beta$$. Definimos o **Horizonte de Probabilidades** como o valor crítico $$\beta_c$$ no qual ocorre uma transição qualitativa na distribuição.
-
-Introduzimos um parâmetro de ordem informacional $$m$$ e um potencial efetivo do tipo Landau:
+O Horizonte de Probabilidades pode então ser interpretado como o valor crítico $\beta_c$ no qual essa redução deixa de ser suave e passa a exibir uma mudança qualitativa no comportamento da distribuição. Para caracterizar essa transição, introduz-se um parâmetro de ordem informacional $m$ e um potencial efetivo do tipo Landau:
 
 $$
 G(m,\beta) = a(\beta - \beta_c)m^2 + b m^4 + \cdots
 $$
 
-com  $$b > 0$$ para estabilidade. A condição crítica é dada por:
+com $b > 0$ garantindo a estabilidade do sistema. A condição crítica é dada por:
 
 $$
 \left.\frac{\partial^2 G}{\partial m^2}\right|_{m=0} = 0
 \quad \Rightarrow \quad \beta = \beta_c
 $$
 
-Também consideramos a divergência de Kullback–Leibler:
+Esse ponto marca uma transição informacional análoga a uma transição de fase, na qual o sistema passa de um regime caracterizado pela coexistência de múltiplas possibilidades para outro dominado por uma única hipótese.
+
+De forma complementar, essa transição pode ser identificada por meio da divergência de Kullback–Leibler entre distribuições sucessivas:
 
 $$
 D_{\mathrm{KL}}(P||Q) = \sum_i p_i \ln \frac{p_i}{q_i}
 $$
 
-No Horizonte de Probabilidades, observa-se um pico abrupto na variação de $$D_{\mathrm{KL}}$$ ou na segunda derivada da entropia, caracterizando o colapso da incerteza.
+No entorno do Horizonte de Probabilidades, observa-se uma variação não linear pronunciada da divergência ou da segunda derivada da entropia, caracterizando o colapso informacional do sistema.
 
 ---
 
-## Discussão
+### **Horizonte de Probabilidades $H(t)$**
 
-O modelo Horizonte de Probabilidades oferece uma interpretação unificada do aprendizado em sistemas adaptativos. Em vez de um processo puramente contínuo, propõe-se a existência de um limiar crítico de informação, além do qual o sistema muda qualitativamente seu regime estatístico.
-
-Exemplos conceituais incluem redes neurais, diferenciação celular e mudanças de consenso em sistemas sociais. Em todos esses casos, múltiplos estados coexistem antes do horizonte; após o horizonte, um estado dominante emerge.
-
-O modelo é teórico e requer validação empírica, mas fornece um quadro conceitual robusto para analisar aprendizado, inferência e auto-organização como fenômenos críticos informacionais.
-
----
-
-## Referências
-
-- Shannon, C. E. (1948). *A Mathematical Theory of Communication*. Bell System Technical Journal, 27, 379–423, 623–656.
-- Jaynes, E. T. (2003). *Probability Theory: The Logic of Science*. Cambridge University Press.
-- Landau, L. D.; Lifshitz, E. M. (1980). *Statistical Physics, Part I*. Pergamon Press.
-- Van Kampen, N. G. (2007). *Stochastic Processes in Physics and Chemistry*. North-Holland.
-- Zadorosny, R. et al. (2015). Fenômenos Críticos e Transições de Fase. *Brazilian Journal of Physics Education*, 3(4).
-- Monolito Nimbus (2022). *Entropia cruzada em imagens*.  
-- Wikipédia. *Teorema de Bayes*. Último acesso em 2025.
-
-
-
----
-
-#### **Descrição do Projeto**
-
-O **Horizonte de Probabilidades** é um conceito teórico que descreve como as possibilidades de um evento evoluem ao longo do tempo, até que as incertezas desapareçam e o evento se torne inevitável (com probabilidade 100%) ou impossível (com probabilidade 0%). Essa teoria está fundamentada em processos estocásticos e distribuições de probabilidade, e o objetivo do projeto é desenvolver uma base matemática sólida para o conceito, além de implementar simulações computacionais que visualizam a evolução das probabilidades.
-
----
-
-#### **Objetivos do Projeto**
-
-1. **Definir o conceito de Horizonte de Probabilidades**, abordando a transição de incertezas ao longo do tempo.
-2. **Desenvolver uma fórmula matemática** que descreva a evolução da probabilidade de um evento à medida que o tempo passa.
-3. **Implementar simulações** que visualizem a transição das probabilidades em diversos cenários.
-4. **Analisar o comportamento das probabilidades** e o ponto em que os eventos se tornam certos ou impossíveis.
-5. **Publicar os resultados** em um formato técnico ou acadêmico, contribuindo para o campo de processos estocásticos e previsão de eventos.
-
----
-
-#### **Conceito Fundamental**
-
-O Horizonte de Probabilidades é definido como o limite temporal a partir do qual a incerteza associada a um evento deixa de evoluir de forma significativa, conduzindo o sistema a um estado de inevitabilidade (probabilidade tendendo a 1) ou de impossibilidade (probabilidade tendendo a 0). Esse conceito descreve a transição dinâmica entre regimes de alta incerteza e regimes determinísticos, sendo aplicável a sistemas estocásticos, processos informacionais e modelos de decisão.
-
-A evolução temporal da probabilidade de ocorrência de um evento pode ser modelada, em primeira aproximação, por uma função de relaxação exponencial:
+Assumindo que o parâmetro $\beta$ seja uma função monotonicamente crescente do tempo, é possível relacionar o horizonte crítico informacional a um horizonte temporal. Define-se o Horizonte de Probabilidades $H(t)$ como o instante no qual a probabilidade $P(t)$ atinge um valor crítico previamente estabelecido $P_c \in (0,1)$. A inversão da equação de evolução fornece:
 
 $$
-P(t) = 1 - e^{-k(t - t_0)}
+H(t) = t_0 + \frac{1}{k} \ln\left(\frac{1}{1 - P(t)}\right)
 $$
 
-
-Onde:
-- **$P(t)$** : probabilidade do evento ocorrer em um instante  $t$ ;
-- **$k>0$** : é uma constante de taxa que controla a velocidade de convergência da probabilidade;
-- **$t_0$** : corresponde ao instante inicial do processo, no qual a incerteza do sistema é máxima.
+Essa expressão permite determinar quando um evento alcança um determinado nível de certeza, identificando o ponto no qual o sistema transita de um regime dominado pela incerteza para um regime efetivamente determinístico. Do ponto de vista interpretativo, o Horizonte de Probabilidades não representa um instante absoluto, mas um limiar dinâmico dependente da taxa de convergência $k$ e do nível de confiança adotado, podendo assumir valores distintos em diferentes sistemas ou contextos.
 
 ---
 
-#### **Horizonte de Probabilidades $H(t)$**
 
-O horizonte de probabilidades $H(t)$ é definido como o instante temporal no qual a probabilidade $P(t)$ atinge um valor crítico previamente estabelecido $P_c​ ∈(0,1)$. A inversão da equação de evolução permite calcular explicitamente esse horizonte temporal:
-
-$$
-H(t) =  t_0 + \frac{1}{k} \ln\left(\frac{1}{1 - P(t)}\right) 
-$$
-
-Essa expressão possibilita determinar quando um evento alcançará um determinado nível de certeza, caracterizando o ponto em que o sistema transita de um regime probabilístico para um regime efetivamente determinístico.
-
-Do ponto de vista interpretativo, o Horizonte de Probabilidades não representa um instante absoluto, mas um limiar dinâmico, dependente da taxa de convergência $$𝑘$$ e do nível de confiança adotado. Assim, diferentes sistemas ou contextos podem apresentar horizontes distintos, mesmo sob a mesma formulação matemática..
-
----
-
-#### **Estrutura do Projeto**
-
-1. **Definição do Conceito**
-   - O Horizonte de Probabilidades é descrito como o ponto onde as incertezas desaparecem e a probabilidade de um evento se torna certa.
-
-2. **Teoria das Probabilidades**
-   - Usamos distribuições de probabilidade, como a **distribuição exponencial** e **cadeias de Markov**, para modelar a evolução da probabilidade ao longo do tempo.
-
-3. **Modelagem Matemática**
-   - A evolução da probabilidade ao longo do tempo é descrita pela equação $P(t) = 1 - e^{-k(t - t_0)}$ , enquanto o momento exato em que a probabilidade é alcançada é dado por $H(t) = \frac{1}{k} \ln\left(\frac{1}{1 - P(t)}\right) + t_0$.
-
-4. **Entropia e Informação**
-   - Utilizamos a **Entropia de Shannon** para quantificar a incerteza no sistema e avaliar como ela diminui ao longo do tempo, até que o evento se torne inevitável ou impossível.
-
-5. **Simulações Computacionais**
-   - Implementamos um código em Python que utiliza bibliotecas como **NumPy** e **Matplotlib** para simular a evolução da probabilidade de eventos em diversos cenários, ajudando a visualizar o ponto do Horizonte de Probabilidades.
-
----
-
-#### **Requisitos**
+## **Requisitos**
 
 - **Linguagem de Programação**: Python
 - **Bibliotecas Necessárias**:
@@ -294,22 +242,50 @@ plt.show()
 
 ---
 
-#### **Grafico**
+## **Grafico**
 <p>
    <img src="https://github.com/heryon/Project_Probability_Horizons/blob/c62dc68dca2ff1664296504942f766d0896395db/grafico_varia%C3%A7%C3%A3o_probabilidades.png"/>
 </p>
 
 ---
 
-#### **Simulações e Análise**
+## **Simulações e Análise**
 
-A simulação computacional exibida no grafico acima mostra como a probabilidade de um evento evolui ao longo do tempo. O gráfico representa a transição das incertezas (no início, muitas possibilidades distribuidas igualmente) até a convergência da probabilidade para 1 (certeza) ou 0 (impossibilidade), destacando o comportamento da distribuição da probabilidade ao longo do tempo no sistema fechado, ponto do Horizonte de Probabilidades $H(t)$.
+As simulações computacionais foram conduzidas com o objetivo de ilustrar a dinâmica do Horizonte de Probabilidades em um sistema fechado, a partir de sequências de dados aleatórios associadas a sorteios da Mega-Sena. Ressalta-se que tais dados não são utilizados com finalidade preditiva, mas como um meio de observar a evolução de distribuições probabilísticas sob hipóteses controladas de uniformidade inicial e acúmulo temporal de informação.
+
+Inicialmente, assume-se uma distribuição uniforme sobre o espaço de eventos, representando um regime de máxima incerteza. À medida que o tempo evolui, a probabilidade de ocorrência dos eventos é atualizada segundo uma dinâmica de relaxação, na qual a taxa de convergência é modulada pela frequência observada e por um parâmetro de decaimento temporal. O gráfico apresentado ilustra a transição progressiva do sistema de um regime altamente indeterminado para um regime no qual determinadas possibilidades passam a dominar estatisticamente o espaço de estados.
+
+Esse processo evidencia a redução gradual da incerteza e a consequente concentração da distribuição de probabilidade, culminando na proximidade do Horizonte de Probabilidades $H(t)$. Nesse ponto, observa-se uma mudança qualitativa no comportamento do sistema, caracterizada pela perda efetiva de graus de liberdade relevantes e pela estabilização da distribuição probabilística. O Horizonte não representa um instante absoluto, mas um limiar dinâmico dependente dos parâmetros do sistema, no qual a evolução probabilística torna-se marginal..
 
 ---
 
-#### **Contribuições**
+## Discussão
+
+O modelo do Horizonte de Probabilidades propõe uma interpretação unificada do aprendizado e da inferência em sistemas adaptativos, ao tratar a redução da incerteza como um processo dinâmico sujeito a transições críticas. Diferentemente de abordagens que assumem uma evolução puramente contínua, o modelo sugere a existência de um limiar informacional a partir do qual o comportamento estatístico do sistema se altera qualitativamente.
+
+Antes do horizonte, múltiplas hipóteses ou estados coexistem com pesos probabilísticos comparáveis, refletindo um regime de alta entropia e elevada sensibilidade a novas informações. Após a ultrapassagem desse limiar, a distribuição torna-se fortemente concentrada, e o sistema passa a operar em um regime efetivamente determinístico, no qual a introdução de novas evidências produz efeitos marginais.
+
+Essa estrutura conceitual encontra paralelos em diversos domínios, como o treinamento de redes neurais, processos de diferenciação celular, formação de consenso em sistemas sociais e fenômenos de auto-organização em sistemas complexos. Em todos esses casos, observa-se uma transição entre um regime exploratório, dominado pela incerteza, e um regime de estabilidade, no qual um estado dominante emerge.
+
+Embora o modelo apresentado seja de natureza teórica e requeira validação empírica em contextos específicos, ele fornece um arcabouço conceitual consistente para analisar aprendizado, inferência e auto-organização como manifestações de transições críticas informacionais, abrindo caminho para extensões futuras e aplicações interdisciplinares.
+
+---
+
+## **Contribuições**
 
 Contribuições são bem-vindas! Se você deseja aprimorar o modelo, adicionar novos cenários de simulação ou explorar variações da fórmula, sinta-se à vontade para abrir um **pull request**.
+
+---
+
+## Referências
+
+- Shannon, C. E. (1948). *A Mathematical Theory of Communication*. Bell System Technical Journal, 27, 379–423, 623–656.
+- Jaynes, E. T. (2003). *Probability Theory: The Logic of Science*. Cambridge University Press.
+- Landau, L. D.; Lifshitz, E. M. (1980). *Statistical Physics, Part I*. Pergamon Press.
+- Van Kampen, N. G. (2007). *Stochastic Processes in Physics and Chemistry*. North-Holland.
+- Zadorosny, R. et al. (2015). Fenômenos Críticos e Transições de Fase. *Brazilian Journal of Physics Education*, 3(4).
+- Monolito Nimbus (2022). *Entropia cruzada em imagens*.  
+- Wikipédia. *Teorema de Bayes*. Último acesso em 2025.
 
 ---
 
