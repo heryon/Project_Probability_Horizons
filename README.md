@@ -10,7 +10,7 @@ Este artigo apresenta o modelo **Horizonte de Probabilidades**, um arcabouço te
 
 Mostra-se que a redução de entropia da informação associada à aquisição de dados pode ocorrer de forma abrupta, com efeito catastrófico ou crítico sobre a dinâmica do sistema. Conectamos, assim, conceitos de inferência bayesiana, entropia informacional e fenômenos críticos em um único quadro teórico. A formulação matemática define parâmetros de ordem informacional e condições de estabilidade similares às de Landau, permitindo caracterizar o ponto crítico (horizonte) em termos de máximos ou mínimos da entropia e da energia livre informacional.
 
-Em conclusão, discutimos as implicações do modelo para sistemas adaptativos — como agentes inteligentes, redes neurais e processos auto-organizados — e como ele oferece uma nova interpretação do processo de aprendizado como uma transição crítica.
+Em conclusão, discutimos as implicações do modelo para sistemas adaptativos, como agentes inteligentes, redes neurais e processos auto-organizados, e como ele oferece uma nova interpretação do processo de aprendizado como uma transição crítica.
 
 **Palavras-chave:** Horizonte de Probabilidades, entropia da informação, inferência bayesiana, transição de fase, sistemas adaptativos.
 
@@ -40,7 +40,7 @@ $$
 H(P) = -\sum_i p_i \ln p_i
 $$
 
-onde $$ p_i $$ são as probabilidades associadas aos estados possíveis do sistema. Essa grandeza mede o grau médio de incerteza: distribuições uniformes apresentam entropia máxima, enquanto distribuições concentradas apresentam entropia menor.
+onde $$p_i$$ são as probabilidades associadas aos estados possíveis do sistema. Essa grandeza mede o grau médio de incerteza: distribuições uniformes apresentam entropia máxima, enquanto distribuições concentradas apresentam entropia menor.
 
 A entropia de Shannon está intimamente relacionada à entropia termodinâmica de Boltzmann–Gibbs, estabelecendo um elo formal entre organização estatística e informação.
 
@@ -54,7 +54,7 @@ $$
 P(\theta | D) = \frac{P(D|\theta) P(\theta)}{P(D)}
 $$
 
-onde $$P(\theta)$$  é a probabilidade *a priori*, $$ P(D|\theta) $$ a verossimilhança, e $$ P(\theta|D) $$ a probabilidade *a posteriori*.
+onde $$P(\theta)$$  é a probabilidade *a priori*, $$P(D|\theta)$$ a verossimilhança, e $$P(\theta|D)$$ a probabilidade *a posteriori*.
 
 Esse processo equivale a restringir a distribuição de probabilidades de modo que a entropia residual seja compatível com os dados. O princípio da Máxima Entropia complementa essa visão ao afirmar que, sob restrições limitadas, a distribuição mais racional é aquela que maximiza a entropia.
 
@@ -74,7 +74,7 @@ Van Kampen (2007) demonstra que pequenas flutuações podem induzir fenômenos c
 
 ### Transições de Fase e Fenômenos Críticos
 
-Na teoria de Landau, define-se um parâmetro de ordem macroscópico \( \eta \) que caracteriza a fase do sistema. Em transições de segunda ordem, a entropia varia continuamente, mas derivadas de ordem superior divergem.
+Na teoria de Landau, define-se um parâmetro de ordem macroscópico $$\eta$$ que caracteriza a fase do sistema. Em transições de segunda ordem, a entropia varia continuamente, mas derivadas de ordem superior divergem.
 
 Esse comportamento universal próximo ao ponto crítico inspira a analogia com sistemas adaptativos: ao assimilar informação suficiente, o sistema cruza um ponto crítico onde sua dinâmica probabilística muda qualitativamente.
 
@@ -88,7 +88,7 @@ $$
 H(P) = -\sum_i p_i \ln p_i
 $$
 
-Sob novas evidências, a distribuição evolui segundo Bayes. Definimos uma energia informacional \( E_i \) associada a cada estado, de modo que:
+Sob novas evidências, a distribuição evolui segundo Bayes. Definimos uma energia informacional $$E_i$$ associada a cada estado, de modo que:
 
 $$
 P(D|i) \propto e^{-E_i}
@@ -110,7 +110,7 @@ $$
 G(m,\beta) = a(\beta - \beta_c)m^2 + b m^4 + \cdots
 $$
 
-com \( b > 0 \) para estabilidade. A condição crítica é dada por:
+com  $$b > 0$$ para estabilidade. A condição crítica é dada por:
 
 $$
 \left.\frac{\partial^2 G}{\partial m^2}\right|_{m=0} = 0
@@ -123,7 +123,7 @@ $$
 D_{\mathrm{KL}}(P||Q) = \sum_i p_i \ln \frac{p_i}{q_i}
 $$
 
-No Horizonte de Probabilidades, observa-se um pico abrupto na variação de \( D_{\mathrm{KL}} \) ou na segunda derivada da entropia, caracterizando o colapso da incerteza.
+No Horizonte de Probabilidades, observa-se um pico abrupto na variação de $$D_{\mathrm{KL}}$$ ou na segunda derivada da entropia, caracterizando o colapso da incerteza.
 
 ---
 
