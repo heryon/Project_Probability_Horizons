@@ -280,20 +280,35 @@ Contribuições são bem-vindas! Se você deseja aprimorar o modelo, adicionar n
 ## Referências
 
 - Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal, 27, 379–423; 623–656.
+  
 - Jaynes, E. T. (2003). Probability Theory: The Logic of Science. Cambridge University Press.
+  
 - Cover, T. M., & Thomas, J. A. (2006). Elements of Information Theory. Wiley-Interscience.
+  
 - Landau, L. D., & Lifshitz, E. M. (1980). Statistical Physics, Part I. Pergamon Press.
+  
 - Goldenfeld, N. (1992). Lectures on Phase Transitions and the Renormalization Group. Addison-Wesley.
+  
 - Stanley, H. E. (1971). Introduction to Phase Transitions and Critical Phenomena. Oxford University Press.
+  
 - van Kampen, N. G. (2007). Stochastic Processes in Physics and Chemistry. North-Holland.
+  
 - Gardiner, C. W. (2009). Stochastic Methods: A Handbook for the Natural and Social Sciences. Springer.
+  
 - MacKay, D. J. C. (2003). Information Theory, Inference, and Learning Algorithms. Cambridge University Press.
+  
 - Bishop, C. M. (2006). Pattern Recognition and Machine Learning. Springer.
+  
 - Friston, K. (2010). The Free-Energy Principle: A Unified Brain Theory? Nature Reviews Neuroscience, 11, 127–138.
+  
 - Bak, P. (1996). How Nature Works: The Science of Self-Organized Criticality. Springer.
+  
 - Bar-Yam, Y. (1997). Dynamics of Complex Systems. Addison-Wesley.
+  
 - Mitchell, M. (2009). Complexity: A Guided Tour. Oxford University Press.
+  
 - Zadorosny, R., et al. (2015). Fenômenos Críticos e Transições de Fase. Revista Brasileira de Ensino de Física, 3(4).
+  
 - Monolito Nimbus. (2022). Entropia cruzada aplicada à análise de imagens. Material técnico complementar.
 
 ---
