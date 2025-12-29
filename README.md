@@ -98,6 +98,10 @@ Esse comportamento universal próximo ao ponto crítico inspira a analogia com s
 
 ### **Conceito Fundamental**
 
+<p align="center">
+  <img src="https://github.com/heryon/Project_Probability_Horizons/blob/f054b8921d8a0dcbb26c247174975287e6a33571/concept_of_the_probability_horizon.png" weidth=400 height=400 alt="concept_of_the_probability_horizon"/>
+</p>
+
 O Horizonte de Probabilidades é definido como o limite a partir do qual a incerteza associada a um evento deixa de evoluir de forma relevante, conduzindo o sistema a um estado de inevitabilidade, quando a probabilidade tende a 1, ou de impossibilidade, quando tende a 0. Esse conceito descreve a transição dinâmica entre regimes dominados pela incerteza e regimes nos quais o comportamento do sistema se torna efetivamente determinístico. Tal estrutura é aplicável a sistemas estocásticos, processos informacionais e modelos de decisão sob incerteza.
 
 Em primeira aproximação, assume-se que a taxa de variação da probabilidade de um evento seja proporcional à incerteza ainda presente no sistema. Essa hipótese conduz naturalmente a uma equação diferencial de relaxação, cuja solução assume a forma exponencial. Assim, a evolução temporal da probabilidade de ocorrência de um evento pode ser modelada por:
