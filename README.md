@@ -20,7 +20,7 @@ Em conclusão, discutimos as implicações do modelo para sistemas adaptativos, 
 
 A incerteza é um conceito central em física estatística e teoria da informação. A entropia da informação, introduzida por Shannon (1948), quantifica o grau médio de incerteza de uma fonte de informação. Em termos simples, quanto mais incerto é o resultado de um experimento aleatório, maior é a informação obtida ao observar sua ocorrência.
 
-Sistemas adaptativos — tais como organismos vivos, agentes de inteligência artificial ou redes neurais — processam informação de forma contínua, atualizando crenças sobre o mundo ou sobre si mesmos. Esse processo de aprendizado reduz gradativamente a incerteza interna. No entanto, experimentos e simulações revelam que essa redução nem sempre é suave: em muitos casos, ocorre de forma abrupta e não linear, lembrando transições de fase observadas na física de muitos corpos.
+Sistemas adaptativos (tais como organismos vivos, agentes de inteligência artificial ou redes neurais) processam informação de forma contínua, atualizando crenças sobre o mundo ou sobre si mesmos. Esse processo de aprendizado reduz gradativamente a incerteza interna. No entanto, experimentos e simulações revelam que essa redução nem sempre é suave: em muitos casos, ocorre de forma abrupta e não linear, lembrando transições de fase observadas na física de muitos corpos.
 
 Sob a ótica da inferência, a lógica bayesiana formaliza a atualização de probabilidades diante de novas evidências. O teorema de Bayes descreve como alterar uma probabilidade inicial a partir de dados observados, resultando em uma probabilidade posterior. Em termos bayesianos, a aquisição de informação faz com que a distribuição de crenças evolua para estados de menor entropia.
 
