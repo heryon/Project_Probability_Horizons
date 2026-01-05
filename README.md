@@ -99,26 +99,26 @@ Esse comportamento universal próximo ao ponto crítico inspira a analogia com s
 ### **Conceito Fundamental**
 
 <p align="center">
-  <img src="https://github.com/heryon/Project_Probability_Horizons/blob/f054b8921d8a0dcbb26c247174975287e6a33571/concept_of_the_probability_horizon.png" weidth=400 height=400 alt="concept_of_the_probability_horizon"/>
+  <img src="https://github.com/heryon/Project_Probability_Horizons/blob/f054b8921d8a0dcbb26c247174975287e6a33571/concept_of_the_probability_horizon.png" width="400" height="400" alt="concept_of_the_probability_horizon"/>
 </p>
 
-O Horizonte de Probabilidades é definido como o limite a partir do qual a incerteza associada a um evento deixa de evoluir de forma relevante, conduzindo o sistema a um estado de inevitabilidade, quando a probabilidade tende a 1, ou de impossibilidade, quando tende a 0. Esse conceito descreve a transição dinâmica entre regimes dominados pela incerteza e regimes nos quais o comportamento do sistema se torna efetivamente determinístico. Tal estrutura é aplicável a sistemas estocásticos, processos informacionais e modelos de decisão sob incerteza.
+O **Horizonte de Probabilidades** é definido como uma transição estrutural na dinâmica de um sistema probabilístico, a partir da qual a incerteza deixa de se propagar de forma relevante. Nesse regime, o sistema evolui para um estado de inevitabilidade, quando a probabilidade tende a 1, ou de impossibilidade, quando tende a 0. O horizonte não representa apenas um instante temporal, mas um limiar geométrico e dinâmico no espaço de distribuições de probabilidade, no qual o comportamento do sistema torna-se efetivamente determinístico. Esse conceito é aplicável a sistemas estocásticos, processos informacionais, modelos de decisão sob incerteza e arquiteturas computacionais probabilísticas.
 
-Em primeira aproximação, assume-se que a taxa de variação da probabilidade de um evento seja proporcional à incerteza ainda presente no sistema. Essa hipótese conduz naturalmente a uma equação diferencial de relaxação, cuja solução assume a forma exponencial. Assim, a evolução temporal da probabilidade de ocorrência de um evento pode ser modelada por:
+Como aproximação inicial escalar, assume-se que a taxa de variação da probabilidade de um evento seja proporcional à incerteza ainda presente no sistema. Essa hipótese conduz a uma equação diferencial de relaxação cuja solução apresenta comportamento exponencial:
 
 $$
 P(t) = 1 - e^{-k(t - t_0)}
 $$
 
-onde $P(t)$ representa a probabilidade do evento em um instante $t$, $k > 0$ é uma constante de taxa que controla a velocidade de convergência do processo e $t_0$ corresponde ao instante inicial, no qual a incerteza do sistema é máxima. Essa expressão descreve um comportamento típico de processos de saturação informacional, nos quais a probabilidade cresce rapidamente nos estágios iniciais e desacelera à medida que o sistema se aproxima de um regime determinístico.
+onde $P(t)$ representa a probabilidade do evento no instante $t$, $k > 0$ é uma constante de taxa que controla a velocidade de convergência do processo e $t_0$ corresponde ao instante inicial, no qual a incerteza do sistema é máxima. Essa expressão descreve um processo típico de saturação informacional, caracterizado por crescimento rápido nos estágios iniciais e desaceleração progressiva à medida que o sistema se aproxima de um regime determinístico.
 
-Embora o tempo organize a dinâmica do processo, o mecanismo fundamental subjacente à convergência probabilística é o acúmulo de informação. Para formalizar esse aspecto, considera-se uma distribuição de probabilidade $P = \{p_i\}$ associada aos estados possíveis do sistema, cuja incerteza global é quantificada pela entropia de Shannon:
+Embora o tempo organize a dinâmica observável, o mecanismo fundamental subjacente à convergência probabilística é o **acúmulo e a reorganização de informação**. Para formalizar esse aspecto, considera-se uma distribuição de probabilidade $P = \{p_i\}$ associada aos estados possíveis do sistema, cuja incerteza global é quantificada pela entropia de Shannon:
 
 $$
 H(P) = -\sum_i p_i \ln p_i
 $$
 
-À medida que novas evidências são incorporadas, a distribuição evolui segundo a regra de Bayes, resultando em uma concentração progressiva da probabilidade. Associando a cada estado uma energia informacional $E_i$, a verossimilhança pode ser expressa na forma exponencial:
+À medida que novas evidências são incorporadas, a distribuição evolui por atualização inferencial, resultando em uma concentração progressiva da probabilidade. Associando a cada estado uma energia informacional $E_i$, a verossimilhança pode ser expressa na forma exponencial:
 
 $$
 P(D|i) \propto e^{-E_i}
@@ -130,9 +130,9 @@ $$
 P_i(\beta) = \frac{e^{-\beta E_i}}{Z(\beta)}
 $$
 
-onde $Z(\beta)$ é a função de partição responsável pela normalização. À medida que $\beta$ aumenta, a distribuição torna-se progressivamente mais concentrada, refletindo a redução dos graus de liberdade relevantes do sistema e a consequente diminuição da entropia informacional.
+onde $Z(\beta)$ é a função de partição responsável pela normalização. À medida que $\beta$ aumenta, a distribuição torna-se progressivamente mais concentrada, refletindo a redução efetiva dos graus de liberdade relevantes do sistema e a consequente diminuição da entropia informacional.
 
-O Horizonte de Probabilidades pode então ser interpretado como o valor crítico $\beta_c$ no qual essa redução deixa de ser suave e passa a exibir uma mudança qualitativa no comportamento da distribuição. Para caracterizar essa transição, introduz-se um parâmetro de ordem informacional $m$ e um potencial efetivo do tipo Landau:
+O Horizonte de Probabilidades pode, então, ser interpretado como um valor crítico $\beta_c$ no qual essa redução deixa de ser suave e passa a exibir uma mudança qualitativa no comportamento da distribuição. Para caracterizar essa transição, introduz-se um parâmetro de ordem informacional $m$ e um potencial efetivo do tipo Landau:
 
 $$
 G(m,\beta) = a(\beta - \beta_c)m^2 + b m^4 + \cdots
@@ -150,25 +150,48 @@ Esse ponto marca uma transição informacional análoga a uma transição de fas
 De forma complementar, essa transição pode ser identificada por meio da divergência de Kullback–Leibler entre distribuições sucessivas:
 
 $$
-D_{\mathrm{KL}}(P||Q) = \sum_i p_i \ln \frac{p_i}{q_i}
+D_{\mathrm{KL}}(P \Vert Q) = \sum_i p_i \ln \frac{p_i}{q_i}
 $$
 
-No entorno do Horizonte de Probabilidades, observa-se uma variação não linear pronunciada da divergência ou da segunda derivada da entropia, caracterizando o colapso informacional do sistema.
+No entorno do Horizonte de Probabilidades, observa-se uma variação não linear pronunciada da divergência ou da curvatura da entropia, caracterizando o colapso informacional do sistema.
 
 ---
 
-### **Horizonte de Probabilidades $H(t)$**
+### **Dinâmica no Espaço de Probabilidades**
 
-Assumindo que o parâmetro $\beta$ seja uma função monotonicamente crescente do tempo, é possível relacionar o horizonte crítico informacional a um horizonte temporal. Define-se o Horizonte de Probabilidades $H(t)$ como o instante no qual a probabilidade $P(t)$ atinge um valor crítico previamente estabelecido $P_c \in (0,1)$. A inversão da equação de evolução fornece:
+Para capturar a natureza vetorial e estrutural do processo, considera-se a evolução direta da distribuição de probabilidades $P_t \in \Delta^{n-1}$, onde $\Delta^{n-1}$ é o simplex de probabilidades. A dinâmica discreta fundamental é definida por:
+
+$$P_{t+1}=\mathcal{N}\Big[\lambda_1 F(P_t)+\lambda_2 T(P_t)+\lambda_3 S(P_t)+ \alpha C(P_t)+ \beta M(P_t)\Big]$$
+
+onde $\mathcal{N}$ é um operador de normalização que projeta o vetor resultante no simplex. Os operadores $F$, $T$, $S$, $C$ e $M$ representam, respectivamente, informações de frequência recente, transições dinâmicas, estruturas posicionais, sinais classificatórios externos e mecanismos internos de memória ou modelagem. Os coeficientes $\lambda_1, \lambda_2, \lambda_3, \alpha$ e $\beta$ controlam a contribuição relativa de cada componente.
+
+A partir dessa dinâmica discreta, define-se o campo vetorial contínuo no espaço de probabilidades como o limite:
+
+$$\Phi(P)=\lim_{\Delta t \to 0}\frac{P_{t+\Delta t} - P_t}{\Delta t}$$
+
+o que conduz à equação diferencial ordinária:
+
+$$\frac{dP}{dt} = \Phi(P)$$
+
+Essa equação define um fluxo dinâmico no simplex de probabilidades. O Horizonte de Probabilidades corresponde a uma mudança qualitativa na estrutura desse fluxo, associada à contração dominante do campo vetorial e à redução efetiva da dimensionalidade acessível do espaço de hipóteses.
+
+---
+
+### **Horizonte de Probabilidades: Definição Estrutural e Operacional**
+
+Do ponto de vista estrutural, o Horizonte de Probabilidades é definido como o conjunto de distribuições para as quais o fluxo induzido por $\Phi(P)$ torna-se localmente contrativo:
+
+$$\mathcal{H}=\{P \in \Delta^{n-1} \mid \lambda_{\max}(J_{\Phi}(P)) < 0\}$$
+
+onde $J_{\Phi}(P)$ é o Jacobiano do campo vetorial e $\lambda_{\max}$ denota o maior autovalor real. Nesse regime, pequenas perturbações na distribuição decaem ao longo do tempo, indicando que a incerteza deixou de se propagar de maneira significativa.
+
+De forma complementar, define-se um **horizonte operacional observável** em termos do tempo, assumindo que o parâmetro informacional seja monotonicamente crescente. O Horizonte de Probabilidades $H(t)$ é então o instante no qual a probabilidade $P(t)$ atinge um valor crítico previamente estabelecido $P_c \in (0,1)$. A inversão da equação de evolução fornece:
 
 $$
 H(t) = t_0 + \frac{1}{k} \ln\left(\frac{1}{1 - P(t)}\right)
 $$
 
-Essa expressão permite determinar quando um evento alcança um determinado nível de certeza, identificando o ponto no qual o sistema transita de um regime dominado pela incerteza para um regime efetivamente determinístico. Do ponto de vista interpretativo, o Horizonte de Probabilidades não representa um instante absoluto, mas um limiar dinâmico dependente da taxa de convergência $k$ e do nível de confiança adotado, podendo assumir valores distintos em diferentes sistemas ou contextos.
-
----
-
+Essa expressão permite determinar quando um evento alcança um determinado nível de certeza. O horizonte temporal não representa um instante absoluto, mas uma parametrização do limiar estrutural imposto pela geometria do campo $\Phi(P)$, dependente da taxa de convergência $k$, da dinâmica interna do sistema e do nível de confiança adotado.
 
 ## **Requisitos**
 
